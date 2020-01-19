@@ -2,9 +2,12 @@ package com.example.projet_if26.Model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity
+import static androidx.room.ForeignKey.CASCADE;
+
+@Entity(foreignKeys = {@ForeignKey(entity = Logement.class, parentColumns = "id", childColumns = "idLogement", onDelete = CASCADE)})
 public class Piece {
 
     private static int idCount = 0;
@@ -18,18 +21,16 @@ public class Piece {
     @ColumnInfo(name = "commentaire")
     private String commentaire;
 
-    /*
-    @ColumnInfo(name = "logement")
-    private Logement logement;
-    */
+    @ColumnInfo(name = "idLogement")
+    private int idLogement;
 
 
-    public Piece(String name, String commentaire) {
+    public Piece(String name, String commentaire, int idLogement) {
         this.id = this.idCount;
         Piece.idCount++;
         this.name = name;
         this.commentaire = commentaire;
-        //this.logement = logement;
+        this.idLogement = idLogement;
     }
 
     public int getId() {
@@ -56,13 +57,13 @@ public class Piece {
         this.commentaire = commentaire;
     }
 
-    /*
-    public Logement getLogement() {
-        return logement;
+    public int getIdLogement() {
+        return idLogement;
     }
 
-    public void setLogement(Logement logement) {
-        this.logement = logement;
+    public void setIdLogement(int idLogement) {
+        this.idLogement = idLogement;
     }
-    */
+
+
 }

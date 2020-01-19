@@ -6,4 +6,26 @@
     <string name="label_etat_detail">Etat Objet</string>
     <string name="label_bouton_annuler_new_detail">Annuler</string>
     <string name="label_bouton_enregistrer_new_detail">Enregistrer</string>
+    <string name="title_activity_login">S\'identifier</string>
+    <string name="login">S\'identifier</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Mot de passe</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Authentification réussi"</string>
+    <string name="invalid_username">Nom d\'utilisateur invalide</string>
+    <string name="invalid_password">Le mot de passe doit comporter plus de 4 caractères !</string>
+    <string name="login_failed">"L\'authentification a échouer"</string>
+    <string name="login_success">"L\'authentification a réussi"</string>
+    <string name="title_activity_list_logement">ListLogementActivity</string>
+    <string name="title_activity_add_logement">AddLogementActivity</string>
+    <string name="hint_logement_name">Nom du locataire</string>
+    <string name="hint_logement_ville">Ville</string>
+    <string name="hint_logement_zipCode">Zip Code</string>
+    <string name="hint_logement_adresse">Adresse</string>
+    <string name="successful_new_logement">Ajout du nouveau logement reussi</string>
+    <string name="consult_etat_bouton_label">Consulter cet état des lieux</string>
+    <string name="title_activity_single_etat">SingleEtatActivity</string>
+    <string name="title_activity_list_piece">ListPieceActivity</string>
+    <string name="title_activity_add_piece">AddPiece</string>
 </resources>

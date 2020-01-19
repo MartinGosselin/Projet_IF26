@@ -2,9 +2,12 @@ package com.example.projet_if26.Model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity
+import static androidx.room.ForeignKey.CASCADE;
+
+@Entity(foreignKeys = {@ForeignKey(entity = User.class, parentColumns = "id", childColumns = "userId", onDelete = CASCADE)})
 public class Logement {
 
     private static int idCount = 0;
@@ -30,23 +33,20 @@ public class Logement {
     @ColumnInfo(name = "created_at")
     private String created_at;
 
-    /*
-    @ColumnInfo(name = "user")
-    private User user;
-
-     */
+    @ColumnInfo(name = "userId")
+    private int userId;
 
 
-    public Logement(String locataire, String zip_code, String adresse, String city, String commentaire, String created_at) {
-        this.id = this.idCount;
+    public Logement(String locataire, String zip_code, String adresse, String city, String commentaire, String created_at, int userId) {
         Logement.idCount++;
+        this.id = this.idCount;
         this.locataire = locataire;
         this.zip_code = zip_code;
         this.adresse = adresse;
         this.city = city;
         this.commentaire = commentaire;
         this.created_at = created_at;
-        //this.user = user;
+        this.userId = userId;
     }
 
     public int getId() {
@@ -103,5 +103,14 @@ public class Logement {
 
     public void setCreated_at(String created_at) {
         this.created_at = created_at;
+    }
+
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }

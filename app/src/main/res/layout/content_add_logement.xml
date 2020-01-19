@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="New Logement" />
+
+    <EditText
+        android:id="@+id/edit_logement_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/hint_logement_name"
+        android:inputType="textAutoComplete"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/edit_logement_adresse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/hint_logement_adresse"
+        android:inputType="textAutoComplete"
+        android:textSize="18sp" />
+    <EditText
+        android:id="@+id/edit_logement_zipCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/hint_logement_zipCode"
+        android:inputType="textAutoComplete"
+        android:textSize="18sp" />
+    <EditText
+        android:id="@+id/edit_logement_ville"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/hint_logement_ville"
+        android:inputType="textAutoComplete"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/button_save_new_logement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="@string/label_bouton_enregistrer_new_detail"
+        android:textColor="@color/buttonLabel" />
+
+</LinearLayout>

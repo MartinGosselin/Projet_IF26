@@ -9,16 +9,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.AddDetailActivity"></activity>
         <activity
-            android:name=".Activity.DetailListActivity"
-            android:windowSoftInputMode="adjustResize">
+            android:name=".Activity.AddPiece"
+            android:label="@string/title_activity_add_piece"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Activity.ListPieceActivity"
+            android:label="@string/title_activity_list_piece"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activity.SingleEtatActivity"
+            android:label="@string/title_activity_single_etat"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activity.AddLogementActivity"
+            android:label="@string/title_activity_add_logement"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activity.ListLogementActivity"
+            android:label="@string/title_activity_list_logement"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Activity.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activity.AddDetailActivity" />
+        <activity
+            android:name=".Activity.DetailListActivity"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

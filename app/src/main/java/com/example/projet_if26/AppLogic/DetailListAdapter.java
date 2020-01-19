@@ -33,7 +33,7 @@ public class DetailListAdapter extends RecyclerView.Adapter<DetailListAdapter.De
 
     @Override
     public DetailViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = mInflater.inflate(R.layout.recyclerview_item, parent, false);
+        View itemView = mInflater.inflate(R.layout.recyclerview_detail, parent, false);
         return new DetailViewHolder(itemView);
     }
 

@@ -19,11 +19,11 @@ public interface UserDao {
     @Query("SELECT * FROM user WHERE id IN (:userIds)")
     LiveData<List<User>> loadAllByIds(int[] userIds);
 
-    @Query("SELECT * FROM user WHERE full_name LIKE :full_name LIMIT 1")
-    LiveData<User> findByName(String full_name);
+    @Query("SELECT *  FROM user WHERE full_name LIKE :full_name LIMIT 1")
+    LiveData<List<User>> getUserByName(String full_name);
 
     @Insert
-    void insertAll(User... users);
+    void insertUser(User user);
 
     @Delete
     void delete(User user);
