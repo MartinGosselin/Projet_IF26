@@ -17,12 +17,10 @@ public class DetailListAdapter extends RecyclerView.Adapter<DetailListAdapter.De
 
     class DetailViewHolder extends RecyclerView.ViewHolder {
         private final TextView detailNameItemView;
-        private final TextView detailEtatItemView;
 
         private DetailViewHolder(View itemView) {
             super(itemView);
             detailNameItemView = itemView.findViewById(R.id.textView_detail_name);
-            detailEtatItemView = itemView.findViewById(R.id.textView_detail_etat);
         }
     }
 
@@ -41,8 +39,7 @@ public class DetailListAdapter extends RecyclerView.Adapter<DetailListAdapter.De
     public void onBindViewHolder(DetailViewHolder holder, int position) {
         if (details != null) {
             Detail current = details.get(position);
-            holder.detailNameItemView.setText(current.getName());
-            holder.detailEtatItemView.setText(current.getIn_state());
+            holder.detailNameItemView.setText("Nom de l'objet : "+current.getName()+" Etat de l'objet : "+current.getIn_state());
         } else {
             // Covers the case of data not being ready yet.
             holder.detailNameItemView.setText("No Name");
