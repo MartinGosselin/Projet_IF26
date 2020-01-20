@@ -1,30 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<LinearLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/edit_piece_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_piece_name"
-            android:inputType="textAutoComplete"
-            android:textSize="18sp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="282dp" />
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_add_piece"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentScrim="?attr/colorPrimary">
 
-        <Button
-            android:id="@+id/button_save_piece"
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_add_piece"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:text="@string/label_bouton_enregistrer_new_piece"
-            android:textColor="@color/buttonLabel"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="399dp" />
-    </LinearLayout>
+            android:layout_height="?attr/actionBarSize"></androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="211dp">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="306dp"
+                    android:layout_height="35dp"
+                    android:text="Nom de la pièce :"
+
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.542"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.607"></TextView>
+
+                <EditText
+                    android:id="@+id/edit_piece_name"
+                    android:layout_width="314dp"
+                    android:layout_height="49dp"
+                    android:hint="@string/hint_piece_name"
+                    android:inputType="textAutoComplete"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.587"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="91dp">
+
+                <Button
+                    android:id="@+id/button_save_piece"
+                    android:layout_width="209dp"
+                    android:layout_height="47dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/label_bouton_enregistrer_new_piece"
+                    android:textColor="@android:color/primary_text_light"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

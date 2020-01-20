@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.text.TextUtils;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.example.projet_if26.R;
 public class AddPieceActivity extends AppCompatActivity {
 
     private EditText editPieceName;
+    private Toolbar toolbarAddPiece;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,9 @@ public class AddPieceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_piece);
 
         editPieceName = findViewById(R.id.edit_piece_name);
+        toolbarAddPiece = findViewById(R.id.toolbar_add_piece);
+        setSupportActionBar(toolbarAddPiece);
+        getSupportActionBar().setTitle("Ajouter une piece");
 
         final Button button = findViewById(R.id.button_save_piece);
         button.setOnClickListener(new View.OnClickListener() {
