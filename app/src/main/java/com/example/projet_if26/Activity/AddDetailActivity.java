@@ -1,6 +1,7 @@
 package com.example.projet_if26.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ public class AddDetailActivity extends AppCompatActivity {
 
     private EditText editNewDetailName;
     private EditText editNewDetailEtat;
+    private Toolbar toolbarAddDetail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,10 @@ public class AddDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_detail);
         editNewDetailName = findViewById(R.id.edit_name_new_detail);
         editNewDetailEtat = findViewById(R.id.edit_etat_new_detail);
+        toolbarAddDetail = findViewById(R.id.toolbar_add_detail);
+
+        setSupportActionBar(toolbarAddDetail);
+        getSupportActionBar().setTitle("Ajouter un objet à la pièce");
 
         final Button button = findViewById(R.id.button_enregister_new_detail);
 

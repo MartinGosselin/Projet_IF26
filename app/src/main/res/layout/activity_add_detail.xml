@@ -1,41 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/edit_name_new_detail"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_add_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-light"
-        android:hint="@string/label_objet"
-        android:inputType="textAutoComplete"
-        android:textSize="18sp" />
+        app:contentScrim="?attr/colorPrimary">
 
-    <EditText
-        android:id="@+id/edit_etat_new_detail"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_add_detail"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView5"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-light"
-        android:hint="@string/label_etat_detail"
-        android:inputType="textAutoComplete"
-        android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/button_enregister_new_detail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:text="@string/label_bouton_enregistrer_new_detail"
-        android:textColor="@color/buttonLabel" />
 
-    <Button
-        android:id="@+id/button_annuler_new_detail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:text="@string/label_bouton_annuler_new_detail"
-        android:textColor="@color/buttonLabel" />
+        android:layout_height="match_parent"
+        app:layout_anchorGravity="center"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="197dp">
+
+                <EditText
+                    android:id="@+id/edit_name_new_detail"
+                    android:layout_width="259dp"
+                    android:layout_height="56dp"
+                    android:fontFamily="sans-serif-light"
+                    android:hint="@string/label_objet"
+                    android:inputType="textAutoComplete"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toTopOf="@+id/edit_etat_new_detail"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/edit_etat_new_detail"
+                    android:layout_width="261dp"
+                    android:layout_height="50dp"
+                    android:fontFamily="sans-serif-light"
+                    android:hint="@string/label_etat_detail"
+                    android:inputType="textAutoComplete"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="387dp"
+                android:layout_height="101dp">
+
+                <Button
+                    android:id="@+id/button_enregister_new_detail"
+                    android:layout_width="191dp"
+                    android:layout_height="49dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/label_bouton_enregistrer_new_detail"
+                    android:textColor="@android:color/primary_text_light"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
