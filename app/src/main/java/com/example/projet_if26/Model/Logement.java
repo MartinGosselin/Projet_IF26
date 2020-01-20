@@ -10,9 +10,8 @@ import static androidx.room.ForeignKey.CASCADE;
 @Entity(foreignKeys = {@ForeignKey(entity = User.class, parentColumns = "id", childColumns = "userId", onDelete = CASCADE)})
 public class Logement {
 
-    private static int idCount = 0;
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int id;
 
     @ColumnInfo(name = "locataire")
@@ -38,8 +37,7 @@ public class Logement {
 
 
     public Logement(String locataire, String zip_code, String adresse, String city, String commentaire, String created_at, int userId) {
-        Logement.idCount++;
-        this.id = this.idCount;
+        this.id = 0;
         this.locataire = locataire;
         this.zip_code = zip_code;
         this.adresse = adresse;

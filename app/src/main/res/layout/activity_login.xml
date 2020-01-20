@@ -34,74 +34,33 @@
             android:id="@+id/constraint_layout_login"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".Activity.LoginActivity">
+            tools:context=".Activity.LoginActivity"
+            app:layout_anchorGravity="center">
 
 
             <LinearLayout
-                android:layout_width="261dp"
-                android:layout_height="415dp"
+                android:layout_width="299dp"
+                android:layout_height="366dp"
                 android:gravity="center"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="210dp"
-                    android:layout_height="117dp"
-                    android:layout_gravity="center">
+                <EditText
+                    android:id="@+id/editText_input_login"
+                    android:layout_width="216dp"
+                    android:layout_height="50dp"
+                    android:hint="Nom d'utilisateur" />
 
-                    <TextView
-                        android:id="@+id/textView_label_utilisateur_login"
-                        android:layout_width="143dp"
-                        android:layout_height="23dp"
-                        android:layout_marginTop="16dp"
-                        android:ems="10"
-                        android:inputType="none"
-                        android:text="Utilisateur"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.492"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <EditText
-                        android:id="@+id/editText_input_login"
-                        android:layout_width="144dp"
-                        android:layout_height="50dp"
-                        android:hint="UserName"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView_label_utilisateur_login" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="210dp"
-                    android:layout_height="118dp">
-
-                    <TextView
-                        android:id="@+id/textView_label_password_login"
-                        android:layout_width="146dp"
-                        android:layout_height="21dp"
-                        android:ems="10"
-                        android:inputType="none"
-                        android:text="Mot de passe"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <EditText
-                        android:id="@+id/editText_input_password"
-                        android:layout_width="148dp"
-                        android:layout_height="57dp"
-                        android:hint="Password"
-                        android:inputType="textPassword"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView_label_password_login" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                <EditText
+                    android:id="@+id/editText_input_password"
+                    android:layout_width="216dp"
+                    android:layout_height="56dp"
+                    android:hint="Mot de passe"
+                    android:inputType="textPassword" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"

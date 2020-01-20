@@ -25,7 +25,7 @@ public interface PieceDao {
     @Query("SELECT * FROM piece WHERE idLogement IN (:idLogement)")
     LiveData<List<Piece>> getAllPieceByLogementId(int idLogement);
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertPiece(Piece piece);
 
     @Delete

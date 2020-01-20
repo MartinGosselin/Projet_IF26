@@ -10,9 +10,8 @@ import static androidx.room.ForeignKey.CASCADE;
 @Entity(foreignKeys = {@ForeignKey(entity = Logement.class, parentColumns = "id", childColumns = "idLogement", onDelete = CASCADE)})
 public class Piece {
 
-    private static int idCount = 0;
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int id;
 
     @ColumnInfo(name = "name")
@@ -26,8 +25,7 @@ public class Piece {
 
 
     public Piece(String name, String commentaire, int idLogement) {
-        this.id = this.idCount;
-        Piece.idCount++;
+        this.id = 0;
         this.name = name;
         this.commentaire = commentaire;
         this.idLogement = idLogement;

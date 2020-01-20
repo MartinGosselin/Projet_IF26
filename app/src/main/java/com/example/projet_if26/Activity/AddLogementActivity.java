@@ -22,6 +22,7 @@ public class AddLogementActivity extends AppCompatActivity {
     private EditText editTextVille;
     private EditText editTextZipCode;
     private EditText editTextAdresse;
+    private Toolbar toolbarAddLogement;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,10 @@ public class AddLogementActivity extends AppCompatActivity {
         editTextName = findViewById(R.id.edit_logement_name);
         editTextZipCode = findViewById(R.id.edit_logement_zipCode);
         editTextVille = findViewById(R.id.edit_logement_ville);
+        toolbarAddLogement = findViewById(R.id.toolbar_add_logement);
+
+        setSupportActionBar(toolbarAddLogement);
+        getSupportActionBar().setTitle("Ajouter un nouveau logement");
 
 
         Button fab = findViewById(R.id.button_save_new_logement);

@@ -24,7 +24,7 @@ public interface LogementDao {
     @Query("SELECT * FROM logement WHERE id IN (:logementIds)")
     LiveData<List<Logement>> loadAllByIds(int[] logementIds);
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertLogement(Logement logement);
 
     @Delete

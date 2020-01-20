@@ -12,12 +12,12 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -30,7 +30,7 @@ public class ListLogementActivity extends AppCompatActivity {
 
     private AppViewModel appViewModel;
     public static final int NEW_LOGEMENT_ACTIVITY_REQUEST_CODE = 1;
-    public Button buttonListLogement;
+    public Toolbar toolbarLogementListe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,12 @@ public class ListLogementActivity extends AppCompatActivity {
         final LogementListAdapter adapter = new LogementListAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        toolbarLogementListe = findViewById(R.id.toolbar_list_logement);
+        setSupportActionBar(toolbarLogementListe);
+        getSupportActionBar().setTitle("Liste des logements");
+
 
         appViewModel = ViewModelProviders.of(this).get(AppViewModel.class);
 
@@ -69,7 +75,7 @@ public class ListLogementActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_LOGEMENT_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Logement logement = new Logement(data.getStringExtra("name"), data.getStringExtra("zipCode"), data.getStringExtra("adresse"),data.getStringExtra("ville"),"","",0);
+            Logement logement = new Logement(data.getStringExtra("name"), data.getStringExtra("zipCode"), data.getStringExtra("adresse"),data.getStringExtra("ville"),"","",1);
             appViewModel.insertLogement(logement);
         } else {
             Toast.makeText(

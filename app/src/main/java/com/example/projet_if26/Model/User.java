@@ -8,9 +8,7 @@ import androidx.room.PrimaryKey;
 @Entity
 public class User {
 
-    private static int idCount = 0;
-
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int id;
 
     @ColumnInfo( name = "full_name")
@@ -23,8 +21,7 @@ public class User {
     private String created_at;
 
     public User(String full_name, String password, String created_at) {
-        this.id = this.idCount;
-        User.idCount++;
+        this.id = 0;
         this.full_name = full_name;
         this.password = password;
         this.created_at = created_at;

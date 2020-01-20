@@ -23,7 +23,7 @@ public interface DetailDao {
     @Query("SELECT * FROM detail WHERE idPiece IN (:idPiece)")
     LiveData<List<Detail>> getAllDetailsByPieceId(int idPiece);
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(Detail detail);
 
     @Delete

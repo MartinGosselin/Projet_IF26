@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 import com.example.projet_if26.Model.User;
@@ -22,7 +23,7 @@ public interface UserDao {
     @Query("SELECT *  FROM user WHERE full_name LIKE :full_name LIMIT 1")
     List<User> getUserByName(String full_name);
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertUser(User user);
 
     @Delete
