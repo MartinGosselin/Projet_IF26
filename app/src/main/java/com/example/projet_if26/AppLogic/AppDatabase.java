@@ -24,7 +24,7 @@ import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {User.class, Piece.class, Logement.class, Detail.class}, version = 1, exportSchema = false)
+@Database(entities = {User.class, Piece.class, Logement.class, Detail.class}, version = 2, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract UserDao userDao();
@@ -43,15 +43,14 @@ public abstract class AppDatabase extends RoomDatabase {
 
             databaseWriteExecutor.execute(() -> {
                 UserDao dao = INSTANCE.userDao();
-                /*
-                if(dao.getAll().getValue().size()==0){
+    /*
                     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                     Date date = new Date();
                     dao.insertUser(new User("admin","admin", formatter.format(date)));
                     Log.d("ADMIN", "admin added");
-                }
 
-                */
+
+     */
             });
         }
     };

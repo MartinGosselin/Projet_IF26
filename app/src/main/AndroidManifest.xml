@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Activity.AddPiece"
+            android:name=".Activity.AddPieceActivity"
             android:label="@string/title_activity_add_piece"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity

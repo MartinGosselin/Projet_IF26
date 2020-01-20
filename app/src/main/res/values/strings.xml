@@ -6,6 +6,8 @@
     <string name="label_etat_detail">Etat Objet</string>
     <string name="label_bouton_annuler_new_detail">Annuler</string>
     <string name="label_bouton_enregistrer_new_detail">Enregistrer</string>
+    <string name="label_bouton_enregistrer_new_piece">Enregistrer</string>
+    <string name="label_bouton_ajouter_new_piece">Ajouter une piece</string>
     <string name="title_activity_login">S\'identifier</string>
     <string name="login">S\'identifier</string>
     <string name="prompt_email">Email</string>
@@ -28,4 +30,5 @@
     <string name="title_activity_single_etat">SingleEtatActivity</string>
     <string name="title_activity_list_piece">ListPieceActivity</string>
     <string name="title_activity_add_piece">AddPiece</string>
+    <string name="hint_piece_name">Nom de la pièce</string>
 </resources>

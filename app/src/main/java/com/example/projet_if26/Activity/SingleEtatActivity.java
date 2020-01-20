@@ -18,6 +18,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +34,7 @@ public class SingleEtatActivity extends AppCompatActivity {
     private TextView cityTextView;
     private TextView zipCodeTextView;
     private TextView adresseTextView;
+    private Button consultEtatButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +45,10 @@ public class SingleEtatActivity extends AppCompatActivity {
         adresseTextView = findViewById(R.id.textView_single_logement_adresse);
         cityTextView = findViewById(R.id.textView_single_logement_ville);
         zipCodeTextView = findViewById(R.id.textView_single_logement_zip_code);
+        consultEtatButton = findViewById(R.id.button_consulter_etat);
 
         Intent startingIntent = getIntent();
         String logementId = startingIntent.getStringExtra("logementId");
-
-
 
         appViewModel = ViewModelProviders.of(this).get(AppViewModel.class);
         List<Logement> listLogement = appViewModel.getLogementById(Integer.parseInt(logementId));
@@ -57,6 +58,15 @@ public class SingleEtatActivity extends AppCompatActivity {
         adresseTextView.setText(logement.getAdresse());
         cityTextView.setText(logement.getCity());
         zipCodeTextView.setText(logement.getZip_code());
+
+        consultEtatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SingleEtatActivity.this, ListPieceActivity.class);
+                intent.putExtra("logementId", logementId);
+                SingleEtatActivity.this.startActivity(intent);
+            }
+        });
 
 
 

@@ -22,9 +22,6 @@ public class LogementListAdapter extends RecyclerView.Adapter<LogementListAdapte
 
     class LogementViewHolder extends RecyclerView.ViewHolder {
         private Button logementNameItemView;
-        private TextView logementAdresseItemView;
-        private TextView logementZipCodeItemView;
-        private TextView logementVilleItemView;
 
         private LogementViewHolder(View itemView) {
             super(itemView);
@@ -38,12 +35,6 @@ public class LogementListAdapter extends RecyclerView.Adapter<LogementListAdapte
                     context.startActivity(intent);
                 }
             });
-            /*
-            logementAdresseItemView = itemView.findViewById(R.id.textView_logement_adresse);
-            logementZipCodeItemView = itemView.findViewById(R.id.textView_logement_zip_code);
-            logementVilleItemView = itemView.findViewById(R.id.textView_logement_ville);
-
-             */
         }
     }
 

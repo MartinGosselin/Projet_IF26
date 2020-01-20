@@ -1,13 +1,17 @@
 package com.example.projet_if26.AppLogic;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.projet_if26.Activity.DetailListActivity;
+import com.example.projet_if26.Activity.SingleEtatActivity;
 import com.example.projet_if26.Model.Piece;
 import com.example.projet_if26.R;
 
@@ -22,6 +26,15 @@ public class PieceListAdapter extends RecyclerView.Adapter<PieceListAdapter.Piec
         private PieceViewHolder(View itemView) {
             super(itemView);
             context = itemView.getContext();
+            buttonRecyclerPiece = itemView.findViewById(R.id.button_recycler_piece);
+            buttonRecyclerPiece.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    Intent intent = new Intent(context, DetailListActivity.class);
+                    intent.putExtra("pieceId", ""+buttonRecyclerPiece.getTag());
+                    context.startActivity(intent);
+                }
+            });
 
         }
     }
@@ -43,6 +56,7 @@ public class PieceListAdapter extends RecyclerView.Adapter<PieceListAdapter.Piec
         if (mPieces != null) {
             Piece current = mPieces.get(position);
             holder.buttonRecyclerPiece.setText(current.getName());
+            holder.buttonRecyclerPiece.setTag(current.getId());
 
         } else {
             // Covers the case of data not being ready yet.
