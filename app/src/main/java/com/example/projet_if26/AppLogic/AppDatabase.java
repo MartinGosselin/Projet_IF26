@@ -42,16 +42,12 @@ public abstract class AppDatabase extends RoomDatabase {
             super.onOpen(db);
 
             databaseWriteExecutor.execute(() -> {
-                /*
+
                 UserDao dao = INSTANCE.userDao();
                 SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                 Date date = new Date();
                 dao.insertUser(new User("admin","admin", formatter.format(date)));
                 Log.d("ADMIN", "admin added");
-
-                 */
-
-
 
             });
         }
@@ -65,7 +61,6 @@ public abstract class AppDatabase extends RoomDatabase {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "app_database")
                             .addCallback(adminLoginCallback)
                             .allowMainThreadQueries()
-                            .fallbackToDestructiveMigration()
                             .build();
                 }
             }

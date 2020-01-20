@@ -6,12 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.projet_if26.Activity.ListLogementActivity;
 import com.example.projet_if26.Activity.SingleEtatActivity;
 import com.example.projet_if26.Model.Logement;
 import com.example.projet_if26.R;
