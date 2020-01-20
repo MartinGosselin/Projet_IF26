@@ -5,15 +5,11 @@ import android.os.Bundle;
 
 import com.example.projet_if26.AppLogic.AppViewModel;
 import com.example.projet_if26.AppLogic.PieceListAdapter;
-import com.example.projet_if26.Model.Logement;
 import com.example.projet_if26.Model.Piece;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -37,6 +33,8 @@ public class ListPieceActivity extends AppCompatActivity {
 
     private Button buttonNewPiece;
 
+    private Toolbar toolbarListPiece;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +47,10 @@ public class ListPieceActivity extends AppCompatActivity {
         final PieceListAdapter adapter = new PieceListAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        toolbarListPiece = findViewById(R.id.toolbar_list_piece);
+        setSupportActionBar(toolbarListPiece);
+        getSupportActionBar().setTitle("Liste des pièces");
 
         buttonNewPiece = findViewById(R.id.button_new_piece);
         buttonNewPiece.setOnClickListener(new View.OnClickListener() {

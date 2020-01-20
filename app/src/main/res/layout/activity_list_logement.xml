@@ -37,24 +37,24 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerview_logement"
-                    android:layout_width="359dp"
+                    android:layout_width="360dp"
                     android:layout_height="384dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.497"
+                    app:layout_constraintVertical_bias="0.5"
                     tools:listitem="@layout/recyclerview_logement">
 
                 </androidx.recyclerview.widget.RecyclerView>
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fab_add_logement"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <Button
+                    android:id="@+id/button_add_logement"
+                    android:layout_width="152dp"
+                    android:layout_height="49dp"
                     android:layout_margin="16dp"
-                    app:backgroundTint="@color/backgroundList"
-                    android:src="@drawable/ic_add_black_24dp"
+                    android:background="@color/backgroundList"
+                    android:text="Ajouter logement"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" />
 

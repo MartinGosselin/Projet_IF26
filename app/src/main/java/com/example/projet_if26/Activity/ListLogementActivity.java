@@ -31,6 +31,7 @@ public class ListLogementActivity extends AppCompatActivity {
     private AppViewModel appViewModel;
     public static final int NEW_LOGEMENT_ACTIVITY_REQUEST_CODE = 1;
     public Toolbar toolbarLogementListe;
+    private Button buttonAddLogement;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,8 +62,8 @@ public class ListLogementActivity extends AppCompatActivity {
 
 
 
-        FloatingActionButton fab = findViewById(R.id.fab_add_logement);
-        fab.setOnClickListener(new View.OnClickListener() {
+        buttonAddLogement = findViewById(R.id.button_add_logement);
+        buttonAddLogement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ListLogementActivity.this, AddLogementActivity.class);
