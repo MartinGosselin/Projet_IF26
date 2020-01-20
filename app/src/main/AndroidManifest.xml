@@ -12,7 +12,7 @@
         <activity
             android:name=".Activity.AddPieceActivity"
             android:label="@string/title_activity_add_piece"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activity.ListPieceActivity"
             android:label="@string/title_activity_list_piece"
@@ -28,8 +28,7 @@
         <activity
             android:name=".Activity.ListLogementActivity"
             android:label="@string/title_activity_list_logement"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".Activity.LoginActivity"
             android:label="@string/title_activity_login"

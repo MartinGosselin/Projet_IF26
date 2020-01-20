@@ -1,30 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/coordinatorLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".Activity.LoginActivity">
+    android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/editText_input_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="UserName" />
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/editText_input_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_login"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:contentScrim="?attr/colorPrimary"></androidx.appcompat.widget.Toolbar>
 
-    <Button
-        android:id="@+id/button_submit_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/login" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-</LinearLayout>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+
+
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_layout_login"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".Activity.LoginActivity">
+
+
+            <LinearLayout
+                android:layout_width="261dp"
+                android:layout_height="415dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="210dp"
+                    android:layout_height="117dp"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:id="@+id/textView_label_utilisateur_login"
+                        android:layout_width="143dp"
+                        android:layout_height="23dp"
+                        android:layout_marginTop="16dp"
+                        android:ems="10"
+                        android:inputType="none"
+                        android:text="Utilisateur"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.492"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/editText_input_login"
+                        android:layout_width="144dp"
+                        android:layout_height="50dp"
+                        android:hint="UserName"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView_label_utilisateur_login" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="210dp"
+                    android:layout_height="118dp">
+
+                    <TextView
+                        android:id="@+id/textView_label_password_login"
+                        android:layout_width="146dp"
+                        android:layout_height="21dp"
+                        android:ems="10"
+                        android:inputType="none"
+                        android:text="Mot de passe"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/editText_input_password"
+                        android:layout_width="148dp"
+                        android:layout_height="57dp"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView_label_password_login" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="83dp">
+
+                    <Button
+                        android:id="@+id/button_submit_login"
+                        android:layout_width="115dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/login"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

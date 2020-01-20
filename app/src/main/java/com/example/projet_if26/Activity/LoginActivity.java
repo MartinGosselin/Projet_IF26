@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.example.projet_if26.AppLogic.AppViewModel;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -26,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText loginEditText;
     private EditText passwordEditText;
     private Button submitLoginButton;
+    private Toolbar loginToolBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,11 @@ public class LoginActivity extends AppCompatActivity {
         this.loginEditText = findViewById(R.id.editText_input_login);
         this.passwordEditText = findViewById(R.id.editText_input_password);
         this.submitLoginButton = findViewById(R.id.button_submit_login);
+        this.loginToolBar = findViewById(R.id.toolbar_login);
+
+        setSupportActionBar(loginToolBar);
+        getSupportActionBar().setTitle("Connexion à l'application");
+
 
         submitLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
