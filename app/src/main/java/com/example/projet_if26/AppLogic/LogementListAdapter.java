@@ -54,7 +54,7 @@ public class LogementListAdapter extends RecyclerView.Adapter<LogementListAdapte
     public void onBindViewHolder(LogementViewHolder holder, int position) {
         if (mLogements != null) {
             Logement current = mLogements.get(position);
-            holder.logementNameItemView.setText(current.getLocataire()+" "+current.getAdresse()+" "+current.getZip_code()+" "+current.getCity());
+            holder.logementNameItemView.setText("Nom du locataire : "+current.getLocataire()+System.getProperty("line.separator")+"Adresse : "+current.getAdresse()+System.getProperty("line.separator")+"Code postal : "+current.getZip_code()+System.getProperty("line.separator")+"Ville : "+current.getCity());
             holder.logementNameItemView.setTag(current.getId());
 
         } else {
