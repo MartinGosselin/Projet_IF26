@@ -29,10 +29,16 @@ public class DetailListActivity extends AppCompatActivity {
     private AppViewModel appViewModel;
     public static final int NEW_DETAIL_ACTIVITY_REQUEST_CODE = 1;
 
+    private int pieceId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_list);
+
+        Intent launchingIntent = getIntent();
+        pieceId = Integer.parseInt(launchingIntent.getStringExtra("pieceId"));
+
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview_detail);
         final DetailListAdapter adapter = new DetailListAdapter(this);
@@ -41,7 +47,7 @@ public class DetailListActivity extends AppCompatActivity {
 
         appViewModel = ViewModelProviders.of(this).get(AppViewModel.class);
 
-        appViewModel.getAllDetails().observe(this, new Observer<List<Detail>>() {
+        appViewModel.getAllDetailsByPieceId(pieceId).observe(this, new Observer<List<Detail>>() {
             @Override
             public void onChanged(@Nullable final List<Detail> details) {
                 adapter.setDetails(details);
@@ -63,7 +69,7 @@ public class DetailListActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_DETAIL_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Detail detail = new Detail(data.getStringExtra("name"),data.getStringExtra("etat"),"","");
+            Detail detail = new Detail(data.getStringExtra("name"),data.getStringExtra("etat"),"","", pieceId);
             appViewModel.insertDetail(detail);
         } else {
             Toast.makeText(

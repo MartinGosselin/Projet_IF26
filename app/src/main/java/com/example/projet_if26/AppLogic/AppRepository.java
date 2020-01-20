@@ -53,7 +53,7 @@ public class AppRepository {
         });
     }
 
-    LiveData<List<User>> getUserByName(String userName) {
+    List<User> getUserByName(String userName) {
         return this.userDao.getUserByName(userName);
     }
 
@@ -77,10 +77,16 @@ public class AppRepository {
         return pieceDao.getAllPieces();
     }
 
+    LiveData<List<Detail>> getAllDetailsByPieceId(int pieceId){
+        return detailDao.getAllDetailsByPieceId(pieceId);
+    }
+
     void insertPiece(Piece piece) {
         AppDatabase.databaseWriteExecutor.execute(() -> {
             this.pieceDao.insertPiece(piece);
         });
     }
+
+
 
 }

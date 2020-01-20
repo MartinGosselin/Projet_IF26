@@ -1,5 +1,6 @@
 package com.example.projet_if26.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.projet_if26.AppLogic.AppViewModel;
@@ -11,6 +12,7 @@ import androidx.lifecycle.ViewModelProviders;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.projet_if26.Model.User;
 import com.example.projet_if26.R;
@@ -39,27 +41,25 @@ public class LoginActivity extends AppCompatActivity {
         submitLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String inputLogin = LoginActivity.this.loginEditText.getText().toString();
-                LiveData<List<User>> userLiveList = LoginActivity.this.appViewModel.getUserByName(inputLogin);
-                List<User> userList = userLiveList.getValue();
+                String inputLogin = loginEditText.getText().toString();
+                List<User> userList = appViewModel.getUserByName(inputLogin);
 
-                /*
                 if(userList.size()>0){
                     User user = userList.get(0);
                     if(user.getPassword().equals(LoginActivity.this.passwordEditText.getText().toString())){
-                        //reussi -> message + redirection intent + set connection
-                        Toast.makeText(
+                         Toast.makeText(
                                 getApplicationContext(),
                                 R.string.login_success,
                                 Toast.LENGTH_LONG).show();
-                        LoginActivity.this.loginEditText.setText("");
+                         Intent intent = new Intent(LoginActivity.this, ListLogementActivity.class);
+                         LoginActivity.this.startActivity(intent);
                     }
                     else{
                         Toast.makeText(
                                 getApplicationContext(),
                                 R.string.login_failed,
                                 Toast.LENGTH_LONG).show();
-                        LoginActivity.this.loginEditText.setText("");
+                        LoginActivity.this.passwordEditText.setText("");
                     }
                 }
                 else{
@@ -67,10 +67,8 @@ public class LoginActivity extends AppCompatActivity {
                             getApplicationContext(),
                             R.string.login_failed,
                             Toast.LENGTH_LONG).show();
-                    LoginActivity.this.loginEditText.setText("");
+                    LoginActivity.this.passwordEditText.setText("");
                 }
-                */
-
             }
         });
     }

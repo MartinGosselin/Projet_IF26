@@ -2,9 +2,12 @@ package com.example.projet_if26.Model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity
+import static androidx.room.ForeignKey.CASCADE;
+
+@Entity(foreignKeys = {@ForeignKey(entity = Piece.class, parentColumns = "id", childColumns = "idPiece", onDelete = CASCADE)})
 public class Detail {
 
     private static int idCount = 0;
@@ -24,19 +27,17 @@ public class Detail {
     @ColumnInfo(name = "out_state")
     private String out_state;
 
-    /*
-    @ColumnInfo(name = "piece")
-    private Piece piece;
-     */
+    @ColumnInfo(name = "idPiece")
+    private int idPiece;
 
-    public Detail(String name, String in_state, String out_state, String commentaire) {
+    public Detail(String name, String in_state, String out_state, String commentaire,int idPiece) {
         this.id = this.idCount;
         Detail.idCount++;
         this.commentaire = commentaire;
         this.name = name;
         this.in_state = in_state;
         this.out_state = out_state;
-        //this.piece = piece;
+        this.idPiece = idPiece;
     }
 
     public int getId() {
@@ -79,14 +80,14 @@ public class Detail {
         this.out_state = out_state;
     }
 
-    /*
-    public Piece getPiece() {
-        return piece;
+
+    public int getIdPiece() {
+        return idPiece;
     }
 
-    public void setPiece(Piece piece) {
-        this.piece = piece;
+    public void setIdPiece(int idPiece) {
+        this.idPiece = idPiece;
     }
 
-    */
+
 }

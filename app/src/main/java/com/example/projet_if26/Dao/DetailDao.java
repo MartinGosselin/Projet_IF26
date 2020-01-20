@@ -20,6 +20,9 @@ public interface DetailDao {
     @Query("SELECT * FROM detail WHERE id IN (:detailIds)")
     LiveData<List<Detail>> loadAllByIds(int[] detailIds);
 
+    @Query("SELECT * FROM detail WHERE idPiece IN (:idPiece)")
+    LiveData<List<Detail>> getAllDetailsByPieceId(int idPiece);
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Detail detail);
 

@@ -20,7 +20,7 @@ public interface UserDao {
     LiveData<List<User>> loadAllByIds(int[] userIds);
 
     @Query("SELECT *  FROM user WHERE full_name LIKE :full_name LIMIT 1")
-    LiveData<List<User>> getUserByName(String full_name);
+    List<User> getUserByName(String full_name);
 
     @Insert
     void insertUser(User user);

@@ -33,7 +33,7 @@ public class AppViewModel extends AndroidViewModel {
         appRepository.insertLogement(logement);
     }
 
-    public LiveData<List<User>> getUserByName(String userName) {
+    public List<User> getUserByName(String userName) {
         return appRepository.getUserByName(userName);
     }
 
@@ -55,6 +55,10 @@ public class AppViewModel extends AndroidViewModel {
 
     public LiveData<List<Piece>> getAllPieceByLogementId(int idLogement){
         return appRepository.getAllPieceByLogementId(idLogement);
+    }
+
+    public LiveData<List<Detail>> getAllDetailsByPieceId(int idPiece){
+        return appRepository.getAllDetailsByPieceId(idPiece);
     }
 
 }
