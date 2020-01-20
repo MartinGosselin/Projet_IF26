@@ -1,71 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Activity.SingleEtatActivity">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_single_logement"
+
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentScrim="?attr/colorPrimary">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_single_logement"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView2"
+        android:layout_width="match_parent"
+
+
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        app:layout_anchorGravity="center"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <TextView
-            android:id="@+id/label_single_logement_name"
-            android:text="Nom du locataire"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/textView_single_logement_name"
-            style="@style/single_logement"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="334dp"
+                android:layout_height="400dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0">
 
-        <TextView
-            android:id="@+id/label_single_logement_ville"
-            android:text="Ville du logement"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/label_single_logement_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nom du locataire" />
 
-        <TextView
-            android:id="@+id/textView_single_logement_ville"
-            style="@style/single_logement"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/textView_single_logement_name"
+                    style="@style/single_logement"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/back"/>
+
+                <TextView
+                    android:id="@+id/label_single_logement_ville"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ville du logement" />
+
+                <TextView
+                    android:id="@+id/textView_single_logement_ville"
+                    style="@style/single_logement"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/back"/>
 
 
-        <TextView
-            android:id="@+id/label_single_logement_zipCode"
-            android:text="Code Postale du logement"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/label_single_logement_zipCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Code Postale du logement" />
 
-        <TextView
-            android:id="@+id/textView_single_logement_zip_code"
-            style="@style/single_logement"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/textView_single_logement_zip_code"
+                    style="@style/single_logement"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/back"/>
 
-        <TextView
-            android:id="@+id/label_single_logement_adresse"
-            android:text="Adresse du logement"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/label_single_logement_adresse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Adresse du logement" />
 
-        <TextView
-            android:id="@+id/textView_single_logement_adresse"
-            style="@style/single_logement"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/textView_single_logement_adresse"
+                    style="@style/single_logement"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/back"/>
 
-        <Button
-            android:id="@+id/button_consulter_etat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Consulter les éléments de l'état des lieux" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="87dp">
 
-    </LinearLayout>
+                    <Button
+                        android:id="@+id/button_consulter_etat"
+                        android:layout_width="197dp"
+                        android:layout_height="45dp"
+                        android:text="Consulter les pièces"
+                        android:background="@color/backgroundList"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

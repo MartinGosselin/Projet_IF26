@@ -4,23 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.projet_if26.AppLogic.AppViewModel;
-import com.example.projet_if26.Model.Detail;
 import com.example.projet_if26.Model.Logement;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.projet_if26.R;
 
@@ -35,6 +26,7 @@ public class SingleEtatActivity extends AppCompatActivity {
     private TextView zipCodeTextView;
     private TextView adresseTextView;
     private Button consultEtatButton;
+    private Toolbar toolbarSingleLogement;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +38,11 @@ public class SingleEtatActivity extends AppCompatActivity {
         cityTextView = findViewById(R.id.textView_single_logement_ville);
         zipCodeTextView = findViewById(R.id.textView_single_logement_zip_code);
         consultEtatButton = findViewById(R.id.button_consulter_etat);
+        toolbarSingleLogement = findViewById(R.id.toolbar_single_logement);
+
+        setSupportActionBar(toolbarSingleLogement);
+        getSupportActionBar().setTitle("Information sur le logement");
+
 
         Intent startingIntent = getIntent();
         String logementId = startingIntent.getStringExtra("logementId");
